@@ -2,10 +2,12 @@
     "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
     "version": "1.6",
+    "speak": "Saúde da Plataforma. A plataforma está operacional, porém apresenta atenção devido ao aumento de latência no Database, impacto em dependências downstream e risco moderado de degradação nas próximas 24 horas.",
     "body": [
         {
             "type": "Container",
             "style": "emphasis",
+            "bleed": true,
             "items": [
                 {
                     "type": "ColumnSet",
@@ -16,27 +18,44 @@
                             "items": [
                                 {
                                     "type": "TextBlock",
-                                    "text": "Health Check — SIGLA",
+                                    "text": "Saúde da Plataforma",
                                     "weight": "Bolder",
                                     "size": "Large"
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "Análise de saúde do sistema",
+                                    "text": "Visão consolidada do ambiente e dos principais componentes.",
                                     "isSubtle": true,
-                                    "spacing": "None"
+                                    "wrap": true,
+                                    "spacing": "Small"
                                 }
                             ]
                         },
                         {
                             "type": "Column",
                             "width": "auto",
+                            "verticalContentAlignment": "Center",
                             "items": [
                                 {
                                     "type": "TextBlock",
-                                    "text": "🟢 HEALTHY",
+                                    "text": "●",
+                                    "color": "Attention",
+                                    "size": "Large",
                                     "weight": "Bolder",
-                                    "color": "Good",
+                                    "horizontalAlignment": "Right"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ATENÇÃO",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Sem alerta aberto no Dynatrace",
+                                    "size": "Small",
+                                    "isSubtle": true,
                                     "horizontalAlignment": "Right"
                                 }
                             ]
@@ -46,96 +65,207 @@
             ]
         },
         {
-            "type": "FactSet",
-            "facts": [
-                {
-                    "title": "Última análise",
-                    "value": "10/08/2026 14:25"
-                },
-                {
-                    "title": "Janela analisada",
-                    "value": "Últimos 30 minutos"
-                },
-                {
-                    "title": "Componentes analisados",
-                    "value": "6 categorias • 28 entidades"
-                }
-            ]
-        },
-        {
             "type": "Container",
-            "style": "good",
             "spacing": "Medium",
             "items": [
                 {
+                    "type": "TextBlock",
+                    "text": "Resumo Executivo",
+                    "weight": "Bolder",
+                    "size": "Medium"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "99,98%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Disponibilidade",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "12",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Incidentes",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "0",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Alertas Dynatrace",
+                                    "isSubtle": true,
+                                    "spacing": "None",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "96,4%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "SLO",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↑ +18%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Latência",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↑ +6%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Throughput",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "●",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Forecast 24h",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Risco moderado",
+                                    "isSubtle": true,
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "A plataforma está operacional. Foram identificados sinais de degradação de performance no Database e em duas dependências downstream. Não existem alertas abertos no Dynatrace. O modelo preditivo indica risco moderado de degradação nas próximas 24 horas.",
+                    "wrap": true,
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "separator": true,
+            "items": [
+                {
                     "type": "ColumnSet",
                     "columns": [
                         {
                             "type": "Column",
-                            "width": "auto",
+                            "width": "stretch",
                             "items": [
                                 {
                                     "type": "TextBlock",
-                                    "text": "🟢",
+                                    "text": "Saúde dos Componentes",
+                                    "weight": "Bolder",
                                     "size": "Medium"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Status Geral",
-                                    "weight": "Bolder"
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "Sistema operacional e sem impactos críticos identificados.",
+                                    "text": "Componentes observados pela análise de saúde da plataforma.",
+                                    "isSubtle": true,
                                     "wrap": true,
-                                    "spacing": "None"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "TextBlock",
-            "text": "Componentes",
-            "weight": "Bolder",
-            "size": "Medium",
-            "spacing": "Large"
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🟢 Infraestrutura",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "8 hosts • 8 disponíveis • CPU e memória normais",
-                                    "isSubtle": true,
-                                    "spacing": "None",
-                                    "wrap": true
+                                    "spacing": "Small"
                                 }
                             ]
                         },
                         {
                             "type": "Column",
                             "width": "auto",
+                            "verticalContentAlignment": "Center",
                             "items": [
                                 {
                                     "type": "ActionSet",
@@ -144,7 +274,7 @@
                                             "type": "Action.ToggleVisibility",
                                             "title": "Detalhar",
                                             "targetElements": [
-                                                "infrastructureDetails"
+                                                "components_details"
                                             ]
                                         }
                                     ]
@@ -155,315 +285,106 @@
                 },
                 {
                     "type": "Container",
-                    "id": "infrastructureDetails",
+                    "id": "components_details",
                     "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
+                    "spacing": "Medium",
                     "items": [
                         {
-                            "type": "TextBlock",
-                            "text": "Detalhamento da Infraestrutura",
-                            "weight": "Bolder"
-                        },
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Hosts",
-                                    "value": "8"
-                                },
-                                {
-                                    "title": "Disponíveis",
-                                    "value": "8"
-                                },
-                                {
-                                    "title": "CPU média",
-                                    "value": "42%"
-                                },
-                                {
-                                    "title": "Memória média",
-                                    "value": "61%"
-                                },
-                                {
-                                    "title": "Disk",
-                                    "value": "38%"
-                                },
-                                {
-                                    "title": "Status",
-                                    "value": "🟢 Healthy"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Entidades",
-                            "weight": "Bolder",
-                            "spacing": "Medium"
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟢 srv-app-01",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "CPU 38% • Memory 59%",
-                                            "isSubtle": true,
-                                            "spacing": "None"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "host01Details"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "type": "Container",
-                            "id": "host01Details",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Host",
-                                            "value": "srv-app-01"
-                                        },
-                                        {
-                                            "title": "CPU",
-                                            "value": "38%"
-                                        },
-                                        {
-                                            "title": "Memory",
-                                            "value": "59%"
-                                        },
-                                        {
-                                            "title": "Disk",
-                                            "value": "41%"
-                                        },
-                                        {
-                                            "title": "Availability",
-                                            "value": "99.99%"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Healthy"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🟢 Grupo de Processos",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "MQ / IIS / Windows Services • 15 processos analisados",
-                                    "isSubtle": true,
-                                    "spacing": "None",
-                                    "wrap": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "ActionSet",
-                                    "actions": [
-                                        {
-                                            "type": "Action.ToggleVisibility",
-                                            "title": "Detalhar",
-                                            "targetElements": [
-                                                "processDetails"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "processDetails",
-                    "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
-                    "items": [
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Processos",
-                                    "value": "15"
-                                },
-                                {
-                                    "title": "Operacionais",
-                                    "value": "15"
-                                },
-                                {
-                                    "title": "Degradados",
-                                    "value": "0"
-                                },
-                                {
-                                    "title": "Indisponíveis",
-                                    "value": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Grupos",
-                            "weight": "Bolder",
-                            "spacing": "Medium"
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟢 IBM MQ",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "6 filas • 0 bloqueadas",
-                                            "isSubtle": true,
-                                            "spacing": "None"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "mqDetails"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Container",
-                            "id": "mqDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Queue Manager",
-                                            "value": "QMGR01"
-                                        },
-                                        {
-                                            "title": "Queues",
-                                            "value": "6"
-                                        },
-                                        {
-                                            "title": "Messages",
-                                            "value": "1.284"
-                                        },
-                                        {
-                                            "title": "Blocked",
-                                            "value": "0"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Running"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ColumnSet",
                             "spacing": "Medium",
-                            "columns": [
+                            "items": [
                                 {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
+                                    "type": "ColumnSet",
+                                    "columns": [
                                         {
-                                            "type": "TextBlock",
-                                            "text": "🟢 IIS",
-                                            "weight": "Bolder"
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "TextBlock",
-                                            "text": "4 Application Pools • 4 running",
-                                            "isSubtle": true,
-                                            "spacing": "None"
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Infraestrutura",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Recursos computacionais e processos operacionais estáveis.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "infra_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Column",
-                                    "width": "auto",
+                                    "type": "Container",
+                                    "id": "infra_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
                                     "items": [
                                         {
-                                            "type": "ActionSet",
-                                            "actions": [
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento da Infraestrutura",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
                                                 {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "iisDetails"
-                                                    ]
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "CPU",
+                                                    "value": "42%"
+                                                },
+                                                {
+                                                    "title": "Memória",
+                                                    "value": "61%"
+                                                },
+                                                {
+                                                    "title": "Disco",
+                                                    "value": "54%"
+                                                },
+                                                {
+                                                    "title": "Processos",
+                                                    "value": "Todos respondendo normalmente"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Nenhum problema aberto"
                                                 }
                                             ]
                                         }
@@ -473,235 +394,100 @@
                         },
                         {
                             "type": "Container",
-                            "id": "iisDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Application Pools",
-                                            "value": "4"
-                                        },
-                                        {
-                                            "title": "Running",
-                                            "value": "4"
-                                        },
-                                        {
-                                            "title": "Stopped",
-                                            "value": "0"
-                                        },
-                                        {
-                                            "title": "Requests",
-                                            "value": "18.432"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Healthy"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🟢 Serviços",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "12 serviços • 12 operacionais",
-                                    "isSubtle": true,
-                                    "spacing": "None"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "ActionSet",
-                                    "actions": [
-                                        {
-                                            "type": "Action.ToggleVisibility",
-                                            "title": "Detalhar",
-                                            "targetElements": [
-                                                "servicesDetails"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "servicesDetails",
-                    "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
-                    "items": [
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Total",
-                                    "value": "12"
-                                },
-                                {
-                                    "title": "Healthy",
-                                    "value": "12"
-                                },
-                                {
-                                    "title": "Degraded",
-                                    "value": "0"
-                                },
-                                {
-                                    "title": "Unavailable",
-                                    "value": "0"
-                                },
-                                {
-                                    "title": "Response Time",
-                                    "value": "245 ms"
-                                },
-                                {
-                                    "title": "Failure Rate",
-                                    "value": "0.2%"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Principais Serviços",
-                            "weight": "Bolder",
-                            "spacing": "Medium"
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟢 SIGLA-API",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "245 ms • Failure Rate 0.1%",
-                                            "isSubtle": true,
-                                            "spacing": "None"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "apiDetails"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Container",
-                            "id": "apiDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Service",
-                                            "value": "SIGLA-API"
-                                        },
-                                        {
-                                            "title": "Requests",
-                                            "value": "18.432"
-                                        },
-                                        {
-                                            "title": "Response Time",
-                                            "value": "245 ms"
-                                        },
-                                        {
-                                            "title": "Failure Rate",
-                                            "value": "0.1%"
-                                        },
-                                        {
-                                            "title": "Instances",
-                                            "value": "6"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Healthy"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ColumnSet",
                             "spacing": "Medium",
-                            "columns": [
+                            "items": [
                                 {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
+                                    "type": "ColumnSet",
+                                    "columns": [
                                         {
-                                            "type": "TextBlock",
-                                            "text": "🟢 SIGLA-BFF",
-                                            "weight": "Bolder"
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "TextBlock",
-                                            "text": "180 ms • Failure Rate 0.0%",
-                                            "isSubtle": true,
-                                            "spacing": "None"
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Grupo de Processos",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Todos os processos operacionais respondendo normalmente.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "process_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Column",
-                                    "width": "auto",
+                                    "type": "Container",
+                                    "id": "process_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
                                     "items": [
                                         {
-                                            "type": "ActionSet",
-                                            "actions": [
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do Grupo de Processos",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
                                                 {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "bffDetails"
-                                                    ]
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "MQ",
+                                                    "value": "Operacional"
+                                                },
+                                                {
+                                                    "title": "IIS",
+                                                    "value": "Operacional"
+                                                },
+                                                {
+                                                    "title": "Processos ativos",
+                                                    "value": "18"
+                                                },
+                                                {
+                                                    "title": "Falhas",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Nenhum problema aberto"
                                                 }
                                             ]
                                         }
@@ -711,506 +497,100 @@
                         },
                         {
                             "type": "Container",
-                            "id": "bffDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Service",
-                                            "value": "SIGLA-BFF"
-                                        },
-                                        {
-                                            "title": "Requests",
-                                            "value": "9.821"
-                                        },
-                                        {
-                                            "title": "Response Time",
-                                            "value": "180 ms"
-                                        },
-                                        {
-                                            "title": "Failure Rate",
-                                            "value": "0.0%"
-                                        },
-                                        {
-                                            "title": "Instances",
-                                            "value": "4"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Healthy"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🟢 Frontend",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Disponibilidade, erros e experiência do usuário",
-                                    "isSubtle": true,
-                                    "spacing": "None",
-                                    "wrap": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "ActionSet",
-                                    "actions": [
-                                        {
-                                            "type": "Action.ToggleVisibility",
-                                            "title": "Detalhar",
-                                            "targetElements": [
-                                                "frontendDetails"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "frontendDetails",
-                    "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
-                    "items": [
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Availability",
-                                    "value": "99.98%"
-                                },
-                                {
-                                    "title": "Page Load",
-                                    "value": "1.8 s"
-                                },
-                                {
-                                    "title": "JavaScript Errors",
-                                    "value": "3"
-                                },
-                                {
-                                    "title": "User Actions",
-                                    "value": "4.821"
-                                },
-                                {
-                                    "title": "Status",
-                                    "value": "🟢 Healthy"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TextBlock",
-                            "text": "Principais componentes",
-                            "weight": "Bolder",
-                            "spacing": "Medium"
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟢 Portal SIGLA",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "99.98% availability • 1.8s load",
-                                            "isSubtle": true,
-                                            "spacing": "None"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "portalDetails"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Container",
-                            "id": "portalDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Sessions",
-                                            "value": "2.341"
-                                        },
-                                        {
-                                            "title": "Page Views",
-                                            "value": "8.721"
-                                        },
-                                        {
-                                            "title": "Load Time",
-                                            "value": "1.8 s"
-                                        },
-                                        {
-                                            "title": "JS Errors",
-                                            "value": "3"
-                                        },
-                                        {
-                                            "title": "Availability",
-                                            "value": "99.98%"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🟢 Entidades Customizadas",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "5 entidades monitoradas • nenhuma anomalia",
-                                    "isSubtle": true,
-                                    "spacing": "None"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "ActionSet",
-                                    "actions": [
-                                        {
-                                            "type": "Action.ToggleVisibility",
-                                            "title": "Detalhar",
-                                            "targetElements": [
-                                                "customDetails"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "customDetails",
-                    "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
-                    "items": [
-                        {
-                            "type": "FactSet",
-                            "facts": [
-                                {
-                                    "title": "Entidades",
-                                    "value": "5"
-                                },
-                                {
-                                    "title": "Healthy",
-                                    "value": "5"
-                                },
-                                {
-                                    "title": "Degraded",
-                                    "value": "0"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟢 Payment Gateway",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "Availability 99.99%",
-                                            "isSubtle": true,
-                                            "spacing": "None"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "paymentDetails"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Container",
-                            "id": "paymentDetails",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Entity Type",
-                                            "value": "Payment Gateway"
-                                        },
-                                        {
-                                            "title": "Transactions",
-                                            "value": "12.821"
-                                        },
-                                        {
-                                            "title": "Success Rate",
-                                            "value": "99.97%"
-                                        },
-                                        {
-                                            "title": "Latency",
-                                            "value": "320 ms"
-                                        },
-                                        {
-                                            "title": "Status",
-                                            "value": "🟢 Healthy"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "items": [
-                {
-                    "type": "ColumnSet",
-                    "columns": [
-                        {
-                            "type": "Column",
-                            "width": "stretch",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "🔴 Alertas",
-                                    "weight": "Bolder"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "2 alertas • 1 warning • 1 informational",
-                                    "isSubtle": true,
-                                    "spacing": "None"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Column",
-                            "width": "auto",
-                            "items": [
-                                {
-                                    "type": "ActionSet",
-                                    "actions": [
-                                        {
-                                            "type": "Action.ToggleVisibility",
-                                            "title": "Detalhar",
-                                            "targetElements": [
-                                                "alertDetails"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "alertDetails",
-                    "isVisible": false,
-                    "style": "emphasis",
-                    "spacing": "Small",
-                    "items": [
-                        {
-                            "type": "ColumnSet",
-                            "columns": [
-                                {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "🟠 Response Time Degradation",
-                                            "weight": "Bolder"
-                                        },
-                                        {
-                                            "type": "TextBlock",
-                                            "text": "SIGLA-API • Response time acima do baseline",
-                                            "isSubtle": true,
-                                            "spacing": "None",
-                                            "wrap": true
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Column",
-                                    "width": "auto",
-                                    "items": [
-                                        {
-                                            "type": "ActionSet",
-                                            "actions": [
-                                                {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "alert01Details"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Container",
-                            "id": "alert01Details",
-                            "isVisible": false,
-                            "items": [
-                                {
-                                    "type": "FactSet",
-                                    "facts": [
-                                        {
-                                            "title": "Problem",
-                                            "value": "Response Time Degradation"
-                                        },
-                                        {
-                                            "title": "Service",
-                                            "value": "SIGLA-API"
-                                        },
-                                        {
-                                            "title": "Current",
-                                            "value": "245 ms"
-                                        },
-                                        {
-                                            "title": "Baseline",
-                                            "value": "180 ms"
-                                        },
-                                        {
-                                            "title": "Deviation",
-                                            "value": "+36%"
-                                        },
-                                        {
-                                            "title": "Impact",
-                                            "value": "Low"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "ColumnSet",
                             "spacing": "Medium",
-                            "columns": [
+                            "items": [
                                 {
-                                    "type": "Column",
-                                    "width": "stretch",
-                                    "items": [
+                                    "type": "ColumnSet",
+                                    "columns": [
                                         {
-                                            "type": "TextBlock",
-                                            "text": "🔵 Informational",
-                                            "weight": "Bolder"
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "TextBlock",
-                                            "text": "Aumento de tráfego identificado",
-                                            "isSubtle": true,
-                                            "spacing": "None"
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Serviços",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "APIs e serviços internos disponíveis.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "services_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "type": "Column",
-                                    "width": "auto",
+                                    "type": "Container",
+                                    "id": "services_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
                                     "items": [
                                         {
-                                            "type": "ActionSet",
-                                            "actions": [
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento dos Serviços",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
                                                 {
-                                                    "type": "Action.ToggleVisibility",
-                                                    "title": "Detalhar",
-                                                    "targetElements": [
-                                                        "alert02Details"
-                                                    ]
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "Serviços",
+                                                    "value": "24"
+                                                },
+                                                {
+                                                    "title": "Disponíveis",
+                                                    "value": "24"
+                                                },
+                                                {
+                                                    "title": "Failure Rate",
+                                                    "value": "0,12%"
+                                                },
+                                                {
+                                                    "title": "Response Time",
+                                                    "value": "312 ms"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Nenhum problema aberto"
                                                 }
                                             ]
                                         }
@@ -1220,23 +600,914 @@
                         },
                         {
                             "type": "Container",
-                            "id": "alert02Details",
-                            "isVisible": false,
+                            "spacing": "Medium",
                             "items": [
                                 {
-                                    "type": "FactSet",
-                                    "facts": [
+                                    "type": "ColumnSet",
+                                    "columns": [
                                         {
-                                            "title": "Traffic",
-                                            "value": "+18%"
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "title": "Period",
-                                            "value": "Últimos 30 minutos"
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Frontend",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Aplicações web operacionais.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
                                         },
                                         {
-                                            "title": "Impact",
-                                            "value": "Nenhum"
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "frontend_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "frontend_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do Frontend",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "Page Load",
+                                                    "value": "1,8 s"
+                                                },
+                                                {
+                                                    "title": "JS Errors",
+                                                    "value": "0,04%"
+                                                },
+                                                {
+                                                    "title": "Apdex",
+                                                    "value": "0,94"
+                                                },
+                                                {
+                                                    "title": "Usuários afetados",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Nenhum problema aberto"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Attention",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Database",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Operacional, porém com aumento de latência.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "database_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "database_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do Database",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟡 Atenção"
+                                                },
+                                                {
+                                                    "title": "Response Time",
+                                                    "value": "+18% vs baseline"
+                                                },
+                                                {
+                                                    "title": "Queries lentas",
+                                                    "value": "14"
+                                                },
+                                                {
+                                                    "title": "Connection Pool",
+                                                    "value": "72%"
+                                                },
+                                                {
+                                                    "title": "Tendência",
+                                                    "value": "↑ Crescente"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Nenhum problema aberto"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Recomendação: investigar as queries de maior latência e validar o comportamento do connection pool.",
+                                            "wrap": true,
+                                            "spacing": "Small"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "API Gateway",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "APIs disponíveis e sem aumento significativo de erros.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "api_gateway_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "api_gateway_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do API Gateway",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "Requests",
+                                                    "value": "1,24M"
+                                                },
+                                                {
+                                                    "title": "Failure Rate",
+                                                    "value": "0,18%"
+                                                },
+                                                {
+                                                    "title": "Response Time",
+                                                    "value": "284 ms"
+                                                },
+                                                {
+                                                    "title": "Throughput",
+                                                    "value": "+6%"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Sistemas de Filas",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Filas processando mensagens normalmente.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "queue_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "queue_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento dos Sistemas de Filas",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "Mensagens processadas",
+                                                    "value": "2,8M"
+                                                },
+                                                {
+                                                    "title": "Queue Depth",
+                                                    "value": "124"
+                                                },
+                                                {
+                                                    "title": "Oldest Message",
+                                                    "value": "4,2 s"
+                                                },
+                                                {
+                                                    "title": "Consumers",
+                                                    "value": "18 ativos"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Entidades Custom",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Entidades customizadas sem alterações relevantes.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "custom_entities_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "custom_entities_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento das Entidades Custom",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟢 Operacional"
+                                                },
+                                                {
+                                                    "title": "Entidades",
+                                                    "value": "36"
+                                                },
+                                                {
+                                                    "title": "Com dados",
+                                                    "value": "36"
+                                                },
+                                                {
+                                                    "title": "Sem dados",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "title": "Última atualização",
+                                                    "value": "11:42"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Attention",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Downstream",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Duas dependências apresentam aumento de tempo de resposta.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "downstream_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "downstream_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do Downstream",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟡 Atenção"
+                                                },
+                                                {
+                                                    "title": "Dependências saudáveis",
+                                                    "value": "8"
+                                                },
+                                                {
+                                                    "title": "Com degradação",
+                                                    "value": "2"
+                                                },
+                                                {
+                                                    "title": "Indisponíveis",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "title": "Impacto",
+                                                    "value": "Aumento de tempo de resposta em duas dependências externas"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Attention",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "SLO",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Performance abaixo do objetivo definido.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "slo_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "slo_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do SLO",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟡 Atenção"
+                                                },
+                                                {
+                                                    "title": "Disponibilidade",
+                                                    "value": "99,98% / 99,90%"
+                                                },
+                                                {
+                                                    "title": "Performance",
+                                                    "value": "96,4% / 99,00%"
+                                                },
+                                                {
+                                                    "title": "Error Budget",
+                                                    "value": "42% restante"
+                                                },
+                                                {
+                                                    "title": "Principal desvio",
+                                                    "value": "Performance abaixo do objetivo"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Attention",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Davis AI Insight",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "IA identificou possível correlação entre latência da aplicação e degradação do Database.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "davis_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "davis_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento Davis AI Insight",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟡 Atenção"
+                                                },
+                                                {
+                                                    "title": "Correlação",
+                                                    "value": "Application Latency → Database Performance"
+                                                },
+                                                {
+                                                    "title": "Indisponibilidade",
+                                                    "value": "Não identificada"
+                                                },
+                                                {
+                                                    "title": "Failure Rate",
+                                                    "value": "Estável"
+                                                },
+                                                {
+                                                    "title": "Database Latency",
+                                                    "value": "+18%"
+                                                },
+                                                {
+                                                    "title": "Confiança",
+                                                    "value": "87%"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Conclusão: a principal hipótese é degradação de performance no Database.",
+                                            "wrap": true,
+                                            "spacing": "Small"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "ColumnSet",
+                                    "columns": [
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "●",
+                                                    "color": "Good",
+                                                    "size": "Medium",
+                                                    "weight": "Bolder"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "stretch",
+                                            "items": [
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Monitoramento",
+                                                    "weight": "Bolder"
+                                                },
+                                                {
+                                                    "type": "TextBlock",
+                                                    "text": "Monitoramento ativo e coleta de telemetria operacional.",
+                                                    "wrap": true,
+                                                    "spacing": "None"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Column",
+                                            "width": "auto",
+                                            "verticalContentAlignment": "Center",
+                                            "items": [
+                                                {
+                                                    "type": "ActionSet",
+                                                    "actions": [
+                                                        {
+                                                            "type": "Action.ToggleVisibility",
+                                                            "title": "Detalhar",
+                                                            "targetElements": [
+                                                                "monitoring_details"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Container",
+                                    "id": "monitoring_details",
+                                    "isVisible": false,
+                                    "style": "emphasis",
+                                    "spacing": "Small",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Detalhamento do Monitoramento",
+                                            "weight": "Bolder"
+                                        },
+                                        {
+                                            "type": "FactSet",
+                                            "facts": [
+                                                {
+                                                    "title": "Status",
+                                                    "value": "🟢 Ativo"
+                                                },
+                                                {
+                                                    "title": "Dynatrace",
+                                                    "value": "Operacional"
+                                                },
+                                                {
+                                                    "title": "Última atualização",
+                                                    "value": "12/08/2026 11:45"
+                                                },
+                                                {
+                                                    "title": "Problemas abertos",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "title": "Cobertura",
+                                                    "value": "Componentes críticos monitorados"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -1248,49 +1519,85 @@
         },
         {
             "type": "Container",
-            "style": "emphasis",
-            "spacing": "Large",
+            "spacing": "Medium",
+            "separator": true,
             "items": [
                 {
                     "type": "TextBlock",
-                    "text": "🤖 Análise da IA",
+                    "text": "Ações Recomendadas",
                     "weight": "Bolder",
                     "size": "Medium"
                 },
                 {
                     "type": "TextBlock",
-                    "text": "O sistema apresenta estado operacional saudável. A infraestrutura, processos, serviços e frontend estão dentro dos parâmetros esperados. Foi identificada uma degradação de aproximadamente 36% no response time da SIGLA-API, porém sem impacto significativo na disponibilidade ou na taxa de falhas. A recomendação é acompanhar a evolução do response time.",
-                    "wrap": true,
-                    "spacing": "Small"
+                    "text": "1. Investigar consultas de maior latência no Database.",
+                    "wrap": true
                 },
                 {
                     "type": "TextBlock",
-                    "text": "Confiança da análise: 94%",
-                    "isSubtle": true,
-                    "spacing": "Medium"
+                    "text": "2. Validar consumo de CPU, conexões e pool do Database.",
+                    "wrap": true
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "3. Monitorar tendência de latência nas próximas 24 horas.",
+                    "wrap": true
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "4. Verificar impacto das dependências downstream.",
+                    "wrap": true
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "separator": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Última atualização",
+                                    "isSubtle": true,
+                                    "size": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "12/08/2026 11:45",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "verticalContentAlignment": "Center",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "● Monitoramento ativo",
+                                    "size": "Small"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ],
     "actions": [
         {
-            "type": "Action.ToggleVisibility",
-            "title": "🔽 Expandir todos",
-            "targetElements": [
-                "infrastructureDetails",
-                "processDetails",
-                "servicesDetails",
-                "frontendDetails",
-                "customDetails",
-                "alertDetails"
-            ]
-        },
-        {
             "type": "Action.Submit",
-            "title": "🔄 Atualizar Health Check",
+            "title": "Ver detalhamento completo",
             "data": {
-                "action": "refresh",
-                "system": "SIGLA"
+                "action": "view_health_details"
             }
         }
     ]
